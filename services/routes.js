@@ -3,7 +3,7 @@ const router = express.Router();
 const pusher = require('./pusher');
 const roomModel = require('../Models/roomModel');
 
-router.post('/send/:roomId', (req, res) => {
+router.put('/send/:roomId', (req, res) => {
   pusher.trigger("my-channel", req.params.roomId, {
     message: req.body.message
   });
